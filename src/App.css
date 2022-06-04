@@ -1,5 +1,5 @@
 body {
-  margin:0;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: aliceblue;
@@ -9,8 +9,8 @@ body {
 
 main {
   background-color: white;
-  height:70vh;
-  width:90%;
+  height: 70vh;
+  width: 90%;
   box-shadow: 0.2rem 0.5rem 0.5rem 0.6rem #bebdbd;
   display: block;
   margin: 3rem auto;
