@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <h1></h1>
+      <h1>BookStore Idumota</h1>
       <nav className="navBar">
         <ul>
           {links.map((link) => (
