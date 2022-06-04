@@ -1,8 +1,7 @@
 export default function BookPage() {
   return (
     <>
-      <section className="bookpage">
-      </section>
+      <section className="bookpage" />
     </>
   );
 }
