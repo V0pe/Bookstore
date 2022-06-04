@@ -1,11 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function SingleBook() {
-  return (
-    <li>
-      Victor is Victory
-      Victor
-      <button type="button"> Remove </button>
-    </li>
-  );
+class SingleBook extends React.PureComponent {
+  render() {
+    const { book } = this.props;
+    return (
+      <li>
+        {book.title}
+        <br />
+        {book.author}
+        <br />
+        <button type="button">Remove</button>
+      </li>
+
+    );
+  }
 }
+
+SingleBook.propTypes = {
+  book: PropTypes.string.isRequired,
+};
+
+export default SingleBook;
