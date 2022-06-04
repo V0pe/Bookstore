@@ -12,6 +12,17 @@ class BookPage extends React.Component {
           title: 'Tales on the moon light',
           author: 'Victor',
         },
+        {
+          id: 2,
+          title: 'Joy on the ride',
+          author: 'Damola',
+        },
+        {
+          id: 3,
+          title: 'Jesus is the way, the truth and the light',
+          author: 'The HolyBible',
+        },
+
       ],
     };
   }
