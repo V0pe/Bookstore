@@ -15,15 +15,12 @@ const AddBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const newBook = {
+    dispatch(addBook({
       id: uuidv4(),
       title,
       author,
       category,
-    };
-
-    dispatch(addBook(newBook));
+    }));
     setBook({
       title: '',
       author: '',
@@ -56,15 +53,20 @@ const AddBook = () => {
         onChange={handleChange}
         required
       />
-      <input
-        type="text"
-        placeholder="Category"
+      <select
         name="category"
+        id="category"
         value={category}
         onChange={handleChange}
         required
-      />
-      <input type="submit" value="Add Book" className="add-btn" />
+      >
+        <option selected="true" value="">CATEGORY</option>
+        <option value="Romance">ROMANCE</option>
+        <option value="Adventure">ADVENTURE</option>
+        <option value="Educational">EDUCATIONAL</option>
+        <option value="Historical">HISTORICAL</option>
+      </select>
+      <input type="submit" value="Submit" className="add-btn" />
 
     </form>
   );
