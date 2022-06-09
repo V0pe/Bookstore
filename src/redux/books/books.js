@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { nanoid } from 'nanoid';
 
 export const addBook = (book) => ({
   type: 'bookstore/books/ADD_BOOK',
@@ -12,19 +12,19 @@ export const removeBook = (book) => ({
 
 const initialState = [
   {
-    id: uuidv4(),
+    id: nanoid(),
     author: 'Jane Auston',
     title: 'Pride and Prejudice',
     genre: 'Romance',
   },
   {
-    id: uuidv4(),
+    id: nanoid(),
     author: 'Robert',
     title: 'Treasure',
     genre: 'Adventure',
   },
   {
-    id: uuidv4(),
+    id: nanoid(),
     author: 'Bert Love',
     title: 'we want to do more than survive',
     genre: 'Educational',
