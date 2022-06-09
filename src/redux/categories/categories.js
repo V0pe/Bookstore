@@ -10,5 +10,5 @@ const categoriesReducer = (categories = [], action) => {
       return categories;
   }
 };
-
+export const selectCategories = (state) => state.categories;
 export default categoriesReducer;
