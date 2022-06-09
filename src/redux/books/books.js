@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid';
+
 export const addBook = (book) => ({
   type: 'bookstore/books/ADD_BOOK',
   payload: book,
@@ -8,7 +10,27 @@ export const removeBook = (book) => ({
   payload: book,
 });
 
-const booksReducer = (books = [], action) => {
+const initialState = [
+  {
+    id: nanoid(),
+    author: 'Jane Auston',
+    title: 'Pride and Prejudice',
+    genre: 'Romance',
+  },
+  {
+    id: nanoid(),
+    author: 'Robert',
+    title: 'Treasure',
+    genre: 'Adventure',
+  },
+  {
+    id: nanoid(),
+    author: 'Bert Love',
+    title: 'we want to do more than survive',
+    genre: 'Educational',
+  },
+];
+const booksReducer = (books = initialState, action) => {
   switch (action.type) {
     case 'bookstore/books/ADD_BOOK':
       return [...books, action.payload];
@@ -19,4 +41,5 @@ const booksReducer = (books = [], action) => {
   }
 };
 
+export const selectBooks = (state) => state.books;
 export default booksReducer;

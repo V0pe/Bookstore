@@ -1,22 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectBooks } from '../redux/books/books';
 import SingleBook from './SingleBook';
 
-class DisplayBook extends React.PureComponent {
-  render() {
-    const { books } = this.props;
-    return (
-      <ul>
-        {books.map((book) => (
-          <SingleBook key={book.id} book={book} />
-        ))}
-      </ul>
-    );
-  }
-}
+const DisplayBook = () => {
+  const books = useSelector(selectBooks);
+  useEffect(() => {
+  }, []);
 
-DisplayBook.propTypes = {
-  books: PropTypes.string.isRequired,
+  return (
+    <ul>
+      {books.map((book) => (
+        <SingleBook key={book.id} book={book} />
+      ))}
+    </ul>
+  );
 };
 
 export default DisplayBook;

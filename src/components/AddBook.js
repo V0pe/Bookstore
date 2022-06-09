@@ -1,17 +1,75 @@
-export default function AddBook() {
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { nanoid } from 'nanoid';
+import { addBook } from '../redux/books/books';
+
+const AddBook = () => {
+  const [book, setBook] = useState({
+    title: '',
+    author: '',
+    genre: '',
+  });
+
+  const { title, author, genre } = book;
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addBook({
+      id: nanoid(),
+      title,
+      author,
+      genre,
+    }));
+    setBook({
+      title: '',
+      author: '',
+      genre: '',
+    });
+  };
+
+  const handleChange = (e) => {
+    setBook({
+      ...book,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit} className="book-form">
       <input
         type="text"
-        placeholder="Book Title"
+        placeholder="Title"
         name="title"
+        value={title}
+        onChange={handleChange}
+        required
       />
       <input
         type="text"
-        placeholder="Book Author"
+        placeholder="Author"
         name="author"
+        value={author}
+        onChange={handleChange}
+        required
       />
-      <button type="button">Add Book</button>
+      <select
+        name="genre"
+        id="genre"
+        value={genre}
+        onChange={handleChange}
+        required
+      >
+        <option selected="true" value="">GENRE</option>
+        <option value="Romance">ROMANCE</option>
+        <option value="Adventure">ADVENTURE</option>
+        <option value="Educational">EDUCATIONAL</option>
+        <option value="Historical">HISTORICAL</option>
+      </select>
+      <input type="submit" value="Submit" className="add-btn" />
+
     </form>
   );
-}
+};
+
+export default AddBook;
