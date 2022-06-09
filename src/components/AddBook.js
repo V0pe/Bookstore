@@ -7,7 +7,7 @@ const AddBook = () => {
   const [book, setBook] = useState({
     title: '',
     author: '',
-    category: '',
+    genre: '',
   });
 
   const { title, author, category } = book;
@@ -19,12 +19,12 @@ const AddBook = () => {
       id: uuidv4(),
       title,
       author,
-      category,
+      genre,
     }));
     setBook({
       title: '',
       author: '',
-      category: '',
+      genre: '',
     });
   };
 
@@ -60,7 +60,7 @@ const AddBook = () => {
         onChange={handleChange}
         required
       >
-        <option selected="true" value="">CATEGORY</option>
+        <option selected="true" value="">GENRE</option>
         <option value="Romance">ROMANCE</option>
         <option value="Adventure">ADVENTURE</option>
         <option value="Educational">EDUCATIONAL</option>

@@ -13,21 +13,21 @@ export const removeBook = (book) => ({
 const initialState = [
   {
     id: uuidv4(),
-    author: 'Peter Jefferson',
-    title: '12 Goals for life',
-    category: 'Category1',
+    author: 'Jane Auston',
+    title: 'Pride and Prejudice',
+    genre: 'Romance',
   },
   {
     id: uuidv4(),
-    author: 'Mark Manson',
-    title: 'Subtle art of not giving a fuck',
-    category: 'Category2',
+    author: 'Robert',
+    title: 'Treasure',
+    genre: 'Adventure',
   },
   {
     id: uuidv4(),
-    author: 'Napoleon Hill',
-    title: 'Think and grow rich',
-    category: 'Category3',
+    author: 'Bert Love',
+    title: 'we want to do more than survive',
+    genre: 'educational',
   },
 ];
 const booksReducer = (books = initialState, action) => {
