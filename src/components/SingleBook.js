@@ -1,24 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
-class SingleBook extends React.PureComponent {
-  render() {
-    const { book } = this.props;
-    return (
-      <li>
-        {book.title}
-        <br />
-        {book.author}
-        <br />
-        <button type="button">Remove</button>
-      </li>
+const SingleBook = (props) => {
+  SingleBook.propTypes = {
+    book: PropTypes.string.isRequired,
+  };
+  const { book } = props;
+  const dispatch = useDispatch();
+  const handleClick = (book) => {
+    dispatch(removeBook(book));
+  };
 
-    );
-  }
-}
+  return (
+    <li id={book.id} key={book.id}>
+      {book.category}
+      <br />
+      {book.title}
+      <br />
+      {book.author}
+      <br />
+      <button type="button" onClick={() => handleClick(book)}>Remove</button>
+    </li>
 
-SingleBook.propTypes = {
-  book: PropTypes.string.isRequired,
+  );
 };
 
 export default SingleBook;
