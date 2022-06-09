@@ -27,7 +27,7 @@ const initialState = [
     id: uuidv4(),
     author: 'Bert Love',
     title: 'we want to do more than survive',
-    genre: 'educational',
+    genre: 'Educational',
   },
 ];
 const booksReducer = (books = initialState, action) => {

@@ -15,7 +15,7 @@ const SingleBook = (props) => {
 
   return (
     <li id={book.id} key={book.id}>
-      {book.category}
+      {book.genre}
       <br />
       {book.title}
       <br />

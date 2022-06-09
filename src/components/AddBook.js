@@ -10,7 +10,7 @@ const AddBook = () => {
     genre: '',
   });
 
-  const { title, author, category } = book;
+  const { title, author, genre } = book;
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -54,9 +54,9 @@ const AddBook = () => {
         required
       />
       <select
-        name="category"
-        id="category"
-        value={category}
+        name="genre"
+        id="genre"
+        value={genre}
         onChange={handleChange}
         required
       >
