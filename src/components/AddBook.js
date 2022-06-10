@@ -55,7 +55,7 @@ const AddBook = () => {
         onChange={handleChange}
         required
       >
-        <option selected="true" value="">GENRE</option>
+        <option value="">GENRE</option>
         <option value="Romance">ROMANCE</option>
         <option value="Adventure">ADVENTURE</option>
         <option value="Educational">EDUCATIONAL</option>
