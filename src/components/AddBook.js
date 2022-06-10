@@ -1,37 +1,32 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { nanoid } from 'nanoid';
 import { addBook } from '../redux/books/books';
 
 const AddBook = () => {
   const [book, setBook] = useState({
     title: '',
     author: '',
-    genre: '',
+    category: '',
   });
 
-  const { title, author, genre } = book;
+  const { title, author, category } = book;
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBook({
-      id: nanoid(),
-      title,
-      author,
-      genre,
-    }));
+    dispatch(addBook(book));
     setBook({
       title: '',
       author: '',
-      genre: '',
+      category: '',
     });
   };
 
-  const handleChange = (e) => {
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
     setBook({
       ...book,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
@@ -54,9 +49,9 @@ const AddBook = () => {
         required
       />
       <select
-        name="genre"
-        id="genre"
-        value={genre}
+        name="category"
+        id="category"
+        value={category}
         onChange={handleChange}
         required
       >

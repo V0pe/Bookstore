@@ -1,14 +1,15 @@
-export const checkStatus = () => ({
-  type: 'bookstore/categories/STATUS_CHECK',
-});
+import { createSlice } from '@reduxjs/toolkit';
 
-const categoriesReducer = (categories = [], action) => {
-  switch (action.type) {
-    case 'bookstore/categories/STATUS_CHECK':
-      return 'Under Construction';
-    default:
-      return categories;
-  }
+const options = {
+  name: 'categories',
+  initialState: [],
+  reducers: {
+    checkStatus: () => ('Under Construction'),
+  },
 };
+const categoriesSlice = createSlice(options);
+
+export const { checkStatus } = categoriesSlice.actions;
+
 export const selectCategories = (state) => state.categories;
-export default categoriesReducer;
+export default categoriesSlice.reducer;

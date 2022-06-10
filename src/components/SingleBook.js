@@ -9,19 +9,19 @@ const SingleBook = (props) => {
   };
   const { book } = props;
   const dispatch = useDispatch();
-  const handleClick = (book) => {
-    dispatch(removeBook(book));
+  const handleClick = (id) => {
+    dispatch(removeBook(id));
   };
 
   return (
     <li id={book.id} key={book.id}>
-      {book.genre}
+      {book.category}
       <br />
       {book.title}
       <br />
       {book.author}
       <br />
-      <button type="button" onClick={() => handleClick(book)}>Remove</button>
+      <button type="button" onClick={() => handleClick(book.id)}>Remove</button>
     </li>
 
   );
