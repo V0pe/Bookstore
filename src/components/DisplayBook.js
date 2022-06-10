@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector, shallowEqual } from 'react-redux';
 import { selectBooks } from '../redux/books/books';
 import SingleBook from './SingleBook';
 
 const DisplayBook = () => {
-  const books = useSelector(selectBooks);
-  useEffect(() => {
-  }, []);
-
+  const books = useSelector(selectBooks, shallowEqual);
   return (
     <ul>
       {books.map((book) => (
