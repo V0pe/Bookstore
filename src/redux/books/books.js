@@ -1,45 +1,63 @@
 import { nanoid } from 'nanoid';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const addBook = (book) => ({
-  type: 'bookstore/books/ADD_BOOK',
-  payload: book,
-});
+const ID = 'zXhm48Ndrhf2GoMq5JlN';
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps';
 
-export const removeBook = (book) => ({
-  type: 'bookstore/books/REMOVE_BOOK',
-  payload: book,
-});
+export const fetchBooks = createAsyncThunk(
+  'books/fetchBooks', async () => {
+    const res = await fetch(`${URL}/${ID}/books`);
+    const books = await res.json();
+    const bookObj = [Object.keys(books).map((key) => (
+      {
+        id: key,
+        ...books[key][0],
+      }
+    ))];
+    return bookObj;
+  },
+);
 
-const initialState = [
-  {
-    id: nanoid(),
-    author: 'Jane Auston',
-    title: 'Pride and Prejudice',
-    genre: 'Romance',
+export const addBook = createAsyncThunk(
+  'books/addBook', async ({ title, author, category }, thunkAPI) => {
+    await fetch(`${URL}/${ID}/books`, {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: nanoid(),
+        title,
+        author,
+        category,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then(() => thunkAPI.dispatch(fetchBooks()));
+    const { books } = thunkAPI.getState().books;
+    return books;
   },
-  {
-    id: nanoid(),
-    author: 'Robert',
-    title: 'Treasure',
-    genre: 'Adventure',
+);
+
+export const removeBook = createAsyncThunk(
+  'books/removeBook', async (bookId, thunkAPI) => {
+    await fetch(`${URL}/${ID}/books/${bookId}`, {
+      method: 'DELETE',
+    }).then(() => thunkAPI.dispatch(fetchBooks()));
+    const { books } = thunkAPI.getState().books;
+    return books;
   },
-  {
-    id: nanoid(),
-    author: 'Bert Love',
-    title: 'we want to do more than survive',
-    genre: 'Educational',
+);
+
+const options = {
+  name: 'books',
+  initialState: [],
+  reducers: {},
+  extraReducers: {
+    [fetchBooks.fulfilled]: (state, action) => action.payload[0],
+    [addBook.fulfilled]: (state, action) => action.payload,
+    [removeBook.fulfilled]: (state, action) => action.payload,
   },
-];
-const booksReducer = (books = initialState, action) => {
-  switch (action.type) {
-    case 'bookstore/books/ADD_BOOK':
-      return [...books, action.payload];
-    case 'bookstore/books/REMOVE_BOOK':
-      return books.filter((book) => book.id !== action.payload.id);
-    default:
-      return books;
-  }
 };
 
+const booksSlice = createSlice(options);
 export const selectBooks = (state) => state.books;
-export default booksReducer;
+export default booksSlice.reducer;
