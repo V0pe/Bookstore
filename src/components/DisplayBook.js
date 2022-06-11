@@ -6,7 +6,7 @@ import SingleBook from './SingleBook';
 const DisplayBook = () => {
   const books = useSelector(selectBooks, shallowEqual);
   return (
-    <ul>
+    <ul className="books-container">
       {books.map((book) => (
         <SingleBook key={book.id} book={book} />
       ))}
