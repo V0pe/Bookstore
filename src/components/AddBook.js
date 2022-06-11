@@ -56,10 +56,10 @@ const AddBook = () => {
         required
       >
         <option value="">GENRE</option>
-        <option value="Romance">ROMANCE</option>
-        <option value="Adventure">ADVENTURE</option>
-        <option value="Educational">EDUCATIONAL</option>
-        <option value="Historical">HISTORICAL</option>
+        <option value="ROMANCE">ROMANCE</option>
+        <option value="ADVENTURE">ADVENTURE</option>
+        <option value="EDUCATIONAL">EDUCATIONAL</option>
+        <option value="HISTORICAL">HISTORICAL</option>
       </select>
       <input type="submit" value="ADD BOOK" className="add-btn" />
 
