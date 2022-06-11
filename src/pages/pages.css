@@ -243,3 +243,18 @@ input[type="submit"] {
   letter-spacing: 0.5px;
   color: #fff;
 }
+
+.category-btn {
+  background-color: var(--primary);
+  width: 10vw;
+  cursor: pointer;
+  color: white;
+  border: none;
+  margin:1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.category-btn:hover {
+  background-color: blue;
+}
