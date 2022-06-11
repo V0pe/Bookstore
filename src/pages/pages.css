@@ -1,5 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+:root {
+  --primary: #0290ff;
+  --secondary: rgba(128, 128, 128, 0.8);
+  --tertiary: black;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+}
+
 header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 6%;
+  background-color: white;
+  border-bottom: 1px solid hsl(240deg 8% 87%);
+  color: var(--primary);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
@@ -7,7 +31,78 @@ nav ul {
   list-style: none;
 }
 
-nav ul li {
+nav ul li a {
   text-decoration: none;
   margin-right: 1rem;
+  color:var(--secondary);
 }
+
+.header-nav h1 {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+#user-avatar {
+  border: 1px solid hsl(240deg 8% 87%);
+  border-radius: 50%;
+  padding:0.4rem;
+}
+
+.active {
+  text-decoration: none;
+  color: var(--tertiary);
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+}
+
+.books {
+  padding: 0 6%;
+}
+
+.hori {
+  color: var(--secondary);
+}
+
+.Addbook-header {
+  color: var(--secondary);
+  margin: 1.3rem 0;
+}
+
+input {
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+  margin-right: 2rem;
+  padding: 0.8% 2.5%;
+  width: 23vw;
+}
+
+input::placeholder {
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+select {
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+  margin-right: 2rem;
+  padding: 0.8% 2.5%;
+  width: 12vw;
+}
+
+select::placeholder {
+  font-size: 1rem;
+  opacity: 0.5;
+  color:var(--secondary);
+}
+
+input[type="submit"] {
+  background-color: var(--primary);
+  width: 10vw;
+  cursor: pointer;
+  color:white;
+  border:none;
+}
+

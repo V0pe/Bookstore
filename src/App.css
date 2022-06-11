@@ -9,9 +9,9 @@ body {
 
 main {
   background-color: hsl(240deg 7% 97%);;
-  height: 70vh;
+  min-height: 80vh;
   width: 90%;
   box-shadow: 0.2rem 0.5rem 0.5rem 0.6rem hsl(240deg 8% 87%);
   display: block;
-  margin: 3rem auto;
+  margin: 3.5rem auto;
 }
