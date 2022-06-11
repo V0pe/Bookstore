@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 :root {
   --primary: #0290ff;
   --secondary: rgba(128, 128, 128, 0.8);
   --tertiary: black;
-  --extra: rgba(30,144,255, 0.7);
-
+  --extra: rgba(30, 144, 255, 0.7);
 }
 
 * {
@@ -17,7 +17,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:0 6%;
+  padding: 0 6%;
   background-color: white;
   border-bottom: 1px solid hsl(240deg 8% 87%);
   color: var(--primary);
@@ -36,7 +36,7 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   margin-right: 1rem;
-  color:var(--secondary);
+  color: var(--secondary);
 }
 
 .header-nav h1 {
@@ -47,7 +47,7 @@ nav ul li a {
 #user-avatar {
   border: 1px solid hsl(240deg 8% 87%);
   border-radius: 50%;
-  padding:0.4rem;
+  padding: 0.4rem;
 }
 
 .active {
@@ -101,15 +101,15 @@ select {
 select::placeholder {
   font-size: 1rem;
   opacity: 0.5;
-  color:var(--secondary);
+  color: var(--secondary);
 }
 
 input[type="submit"] {
   background-color: var(--primary);
   width: 10vw;
   cursor: pointer;
-  color:white;
-  border:none;
+  color: white;
+  border: none;
 }
 
 .books-container {
@@ -129,7 +129,7 @@ input[type="submit"] {
 }
 
 .book-info {
-  margin:0;
+  margin: 0;
   padding: 0;
 }
 
@@ -153,10 +153,10 @@ input[type="submit"] {
 }
 
 .interaction button {
-  border:none;
+  border: none;
   outline: none;
   background-color: white;
-  color:var(--extra);
+  color: var(--extra);
   margin: 1rem 1rem 1rem 0;
   font-size: 1rem;
 }
@@ -165,6 +165,7 @@ input[type="submit"] {
   color: var(--secondary);
   opacity: 0.6;
 }
+
 .book-col {
   flex-basis: 31%;
 }
@@ -190,7 +191,7 @@ input[type="submit"] {
 }
 
 .percent-complete {
-   color: var(--tertiary);
+  color: var(--tertiary);
 }
 
 .progress-container {
@@ -210,7 +211,6 @@ input[type="submit"] {
   background-color: var(--secondary);
   opacity: 0.4;
 }
-
 
 .current-chapter-container {
   display: flex;
@@ -233,19 +233,6 @@ input[type="submit"] {
 }
 
 .primary-button {
-  cursor: pointer;
-  border: none;
-  background-color: #0290ff;
-  border-radius: 3px;
-  padding: 8px 24px;
-  font-family: "Roboto Slab", serif;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  color: #fff;
-}
-
-.primary-button {
-  margin:0;
   cursor: pointer;
   border: none;
   background-color: #0290ff;

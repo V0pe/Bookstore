@@ -8,7 +8,7 @@ body {
 }
 
 main {
-  background-color: hsl(240deg 7% 97%);;
+  background-color: hsl(240deg 7% 97%);
   min-height: 80vh;
   width: 90%;
   box-shadow: 0.2rem 0.5rem 0.5rem 0.6rem hsl(240deg 8% 87%);
