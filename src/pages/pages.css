@@ -250,9 +250,8 @@ input[type="submit"] {
   cursor: pointer;
   color: white;
   border: none;
-  margin:1rem;
+  margin: 1rem;
   padding: 0.5rem 1rem;
-  cursor: pointer;
 }
 
 .category-btn:hover {
