@@ -2,16 +2,17 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: aliceblue;
+  background-color: hsl(240deg 30% 96%);
   min-height: 100vh;
   width: 100%;
 }
 
 main {
-  background-color: white;
-  height: 70vh;
+  background-color: hsl(240deg 7% 97%);
+  min-height: 80vh;
   width: 90%;
-  box-shadow: 0.2rem 0.5rem 0.5rem 0.6rem #bebdbd;
+  box-shadow: 0.2rem 0.5rem 0.5rem 0.6rem hsl(240deg 8% 87%);
   display: block;
-  margin: 3rem auto;
+  margin: 3.5rem auto;
+  padding-bottom: 10rem;
 }

@@ -1,5 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --primary: #0290ff;
+  --secondary: rgba(128, 128, 128, 0.8);
+  --tertiary: black;
+  --extra: rgba(30, 144, 255, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+}
+
 header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6%;
+  background-color: white;
+  border-bottom: 1px solid hsl(240deg 8% 87%);
+  color: var(--primary);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
@@ -7,7 +33,227 @@ nav ul {
   list-style: none;
 }
 
-nav ul li {
+nav ul li a {
   text-decoration: none;
   margin-right: 1rem;
+  color: var(--secondary);
+}
+
+.header-nav h1 {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+#user-avatar {
+  border: 1px solid hsl(240deg 8% 87%);
+  border-radius: 50%;
+  padding: 0.4rem;
+}
+
+.active {
+  text-decoration: none;
+  color: var(--tertiary);
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+}
+
+.books {
+  padding: 0 6%;
+}
+
+.hori {
+  color: var(--secondary);
+}
+
+.Addbook-header {
+  color: var(--secondary);
+  margin: 1.3rem 0;
+}
+
+form {
+  margin-bottom: 3rem;
+}
+
+input {
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+  margin-right: 2rem;
+  padding: 0.8% 2.5%;
+  width: 23vw;
+}
+
+input::placeholder {
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+select {
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+  margin-right: 2rem;
+  padding: 0.8% 2.5%;
+  width: 12vw;
+}
+
+select::placeholder {
+  font-size: 1rem;
+  opacity: 0.5;
+  color: var(--secondary);
+}
+
+input[type="submit"] {
+  background-color: var(--primary);
+  width: 10vw;
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+.books-container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.book-container {
+  display: flex;
+  background-color: white;
+  margin: 2rem 0;
+  padding: 0.5% 2% 2% 2%;
+  border-radius: 4px;
+  border: 2px solid hsl(240deg 30% 96%);
+  align-items: center;
+}
+
+.book-info {
+  margin: 0;
+  padding: 0;
+}
+
+.book-info h5 {
+  color: var(--secondary);
+  margin-bottom: 0;
+}
+
+.book-info h3 {
+  margin-bottom: 0.1rem;
+}
+
+.book-info h6 {
+  margin: 0;
+  color: var(--extra);
+  font-size: 1rem;
+}
+
+.interaction {
+  display: flex;
+}
+
+.interaction button {
+  border: none;
+  outline: none;
+  background-color: white;
+  color: var(--extra);
+  margin: 1rem 1rem 1rem 0;
+  font-size: 1rem;
+}
+
+.vertical {
+  color: var(--secondary);
+  opacity: 0.6;
+}
+
+.book-col {
+  flex-basis: 31%;
+}
+
+.circular-progress-container {
+  width: 5.625rem;
+  height: 5.625rem;
+  padding: 0.63rem 0.625rem 0.75rem 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circular-progress {
+  border-radius: 50%;
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 0.5rem solid #307bbe;
+  border-left-color: rgba(128, 128, 128, 0.2);
+  border-bottom-color: rgba(128, 128, 128, 0.2);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.percent-complete {
+  color: var(--tertiary);
+}
+
+.progress-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 5rem;
+}
+
+.completed {
+  color: var(--secondary);
+}
+
+.progress-divider {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 0 3.688rem 0 4.938rem;
+  background-color: var(--secondary);
+  opacity: 0.4;
+}
+
+.current-chapter-container {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+  gap: 20px;
+  width: 14rem;
+}
+
+.current-chapter,
+.current-chapter-label {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  color: var(--secondary);
+}
+
+.current-chapter-label {
+  font-size: 0.813rem;
+  opacity: 0.8;
+}
+
+.primary-button {
+  cursor: pointer;
+  border: none;
+  background-color: #0290ff;
+  border-radius: 3px;
+  padding: 8px 24px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.category-btn {
+  background-color: var(--primary);
+  width: 10vw;
+  cursor: pointer;
+  color: white;
+  border: none;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.category-btn:hover {
+  background-color: blue;
 }
